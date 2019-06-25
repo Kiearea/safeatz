@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        *{
+        background-image: url("/images/brooke-lark-08bOYnH_r_E-unsplash.jpg")
+
+        }
+    </style>
+
     <title>safEatz</title>
+
+    <nav class="navbar-container">
+        <div><a href="/">safEatz</a></div>
+        <div><a href="/login">Login</a></div>
+        <div class="selected">Signup</div>
+    </nav>
 </head>
 
 <body>
 
-<div>
-    <h1><a href="/">safEatz</a></h1>
+<div class="heading">
+    <h1>safEatz</h1>
     <p>Safe foods, no pain</p>
 </div>
 
-<form>
+<form class="form-container">
     <input name="username" type="text" placeholder="Username"/>
     <input name="password" type="password" placeholder="Password"/>
     <input name="verify-password" type="password" placeholder="Verify Password"/>

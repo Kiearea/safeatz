@@ -1,12 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
 #mapid {
     display: block;
     width: 100vw;
     height: 75vh;
 }
 
-nav {
-    color: #8FBC8F;
+.navbar-container {
     display: flex;
+    font-family: 'Roboto Slab', serif;
+    font-size: 14px;
+    margin: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar-container div {
+    margin: 10px;
+}
+
+.selected {
+    color: #00cc66;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    font-family: 'Berkshire Swash';
+    font-size: 60px;
+    color: #00cc66;
+    margin: 0px;
+}
+
+.heading p {
+    font-size: 14px;
 }
 
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+.form-container input {
+    padding: 10px;
+    margin: 5px;
+    width: 50vw;
+}
+
+
+footer p {
+    font-family: 'Roboto Slab', serif;
+    font-size: 10px;
+}

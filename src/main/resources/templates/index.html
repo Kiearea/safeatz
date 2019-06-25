@@ -2,29 +2,33 @@
 <html xmlns:th="http://www.thymeleaf.org/" xmlns:https="http://www.springframework.org/schema/mvc">
 
 <head>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
-              integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-              crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
 
-        <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
-        <link th:href="@{/css/style.css}" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="application/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="application/javascript"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="application/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 
+    <title>safEatz</title>
 
-        <title>safEatz</title>
-        <nav>
-            <p><a href="/login">Login</a></p>
-            <p><a href="/signup">Signup</a></p>
-        </nav>
+    <nav class="navbar-container">
+        <div class="selected">safEatz</div>
+        <div><a href="/login">Login</a></div>
+        <div><a href="/signup">Signup</a></div>
+        <input type="text" placeholder="Search.."/>
+        <input type="submit" value="Submit" />
+    </nav>
 </head>
 
 <body>
 
-    <div>
+    <div class="heading">
         <h1>safEatz</h1>
         <p>Safe foods, no pain</p>
     </div>
@@ -43,10 +47,25 @@
             accessToken: 'pk.eyJ1IjoiZW1tYXIxMTYiLCJhIjoiY2p4NmJta3BrMDF5djRhczJkeHJpa2ZrbSJ9.cXAK6dADsONnen5z6lHKCw'
         }).addTo(mymap);
 
+        var pinIcon = L.icon({
+            iconUrl: '/images/pin.svg',
+            iconSize:     [32, 37],
+            iconAnchor:   [16, 56],
+            popupAnchor:  [0, -55]
+            });
+
+        L.marker([37.0902, -95.7129], {icon:pinIcon}).addTo(mymap).bindPopup('Sup Dawg');
+
     </script>
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
     <script th:src="@{/js/mainpagemap.js}" type="application/javascript"></script>
 
 
 </body>
+<footer>
+    <p>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"
+       title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+       title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+</footer>
+
 </html>
