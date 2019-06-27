@@ -6,7 +6,6 @@ p {
 }
 
 
-
 #mapid {
     display: block;
     width: 100vw;
@@ -26,8 +25,16 @@ p {
     margin: 10px;
 }
 
+.leaflet-popup-content-wrapper {
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+    color: #00cc66;
+}
+
+
 .selected {
     color: #00cc66;
+    font-size: 16px;
 }
 
 .heading {
@@ -43,24 +50,11 @@ p {
 
 .heading p {
     font-size: 14px;
+    font-family: 'Roboto Slab', serif;
 }
-
-
-.form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-}
-
-.form-container input {
-    padding: 10px;
-    margin: 5px;
-    width: 50vw;
-}
-
 
 footer p {
     font-family: 'Roboto Slab', serif;
     font-size: 10px;
+    text-align: center;
 }

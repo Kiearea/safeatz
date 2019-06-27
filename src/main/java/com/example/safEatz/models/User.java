@@ -1,15 +1,28 @@
 package com.example.safEatz.models;
 
-public class User {
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
-    private String username;
-    private String password;
+@Entity
+public class User {
+    @Id
+    @GeneratedValue
     private Integer id;
 
+    @NotNull
+    @Column(unique = true)
+    private String username;
 
-    public User(String username, String password, Integer id){
-        this.username = username;
-        this.password = password;
+    @OneToMany //connects user to the pins
+    private List<Pin> pins;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -21,14 +34,11 @@ public class User {
         this.username = username;
     }
 
-    public Integer getId() {
-        return id;
+    public List<Pin> getPins() {
+        return pins;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPins(List<Pin> pins) {
+        this.pins = pins;
     }
 }
-
-
-

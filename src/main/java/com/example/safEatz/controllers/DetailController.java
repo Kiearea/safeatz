@@ -5,14 +5,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class SignupController {
+public class DetailController {
 
-    @RequestMapping(value = "signup")
+    @RequestMapping(value = "detail")
     public String index(Model model) {
 
-        return "signup";
+    return "detail";
     }
-
 }
 
 

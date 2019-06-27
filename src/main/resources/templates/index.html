@@ -18,9 +18,7 @@
     <title>safEatz</title>
 
     <nav class="navbar-container">
-        <div class="selected">safEatz</div>
-        <div><a href="/login">Login</a></div>
-        <div><a href="/signup">Signup</a></div>
+        <div class="selected">Home</div>
         <input type="text" placeholder="Search.."/>
         <input type="submit" value="Submit" />
     </nav>
@@ -32,6 +30,11 @@
         <h1>safEatz</h1>
         <p>Safe foods, no pain</p>
     </div>
+
+    <form th:object="${pin}">
+        <input th:field="*{lat}" type="hidden" name="lat" />
+        <input th:field="*{lng}" type="hidden" name="lng" />
+    </form>
 
     <div id="mapid"></div>
 
@@ -47,14 +50,6 @@
             accessToken: 'pk.eyJ1IjoiZW1tYXIxMTYiLCJhIjoiY2p4NmJta3BrMDF5djRhczJkeHJpa2ZrbSJ9.cXAK6dADsONnen5z6lHKCw'
         }).addTo(mymap);
 
-        var pinIcon = L.icon({
-            iconUrl: '/images/pin.svg',
-            iconSize:     [32, 37],
-            iconAnchor:   [16, 56],
-            popupAnchor:  [0, -55]
-            });
-
-        L.marker([37.0902, -95.7129], {icon:pinIcon}).addTo(mymap).bindPopup('Sup Dawg');
 
     </script>
     <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
