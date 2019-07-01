@@ -1,3 +1,43 @@
+//map
+var mymap = L.map('mapid').setView([37.0902, -95.7129], 5);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZW1tYXIxMTYiLCJhIjoiY2p4NmJta3BrMDF5djRhczJkeHJpa2ZrbSJ9.cXAK6dADsONnen5z6lHKCw'
+}).addTo(mymap);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Document ready!");
+
+    // Fetch pins and plot them
+    fetch("/api")
+    .then(r => r.json())
+    .then(r => {
+        r.forEach(pin => L.marker([pin.lat, pin.lng]).addTo(mymap));
+    });
+
+    // Handle New pins being dropped.
+    mymap.on("draw:created", function (e) {
+       var type = e.layerType,
+           layer = e.layer;
+
+       if (type === 'marker') {
+           // Do marker specific actions
+           var latlng = e.layer._latlng;
+
+           $("form input[name='lat']").val(latlng.lat);
+           $("form input[name='lng']").val(latlng.lng);
+
+       }
+
+       mymap.addLayer(layer);
+    });
+});
+
+
 var drawnItems = new L.FeatureGroup();
 mymap.addLayer(drawnItems);
 
@@ -7,25 +47,6 @@ featureGroup: drawnItems
 }
 });
 
-mymap.on('draw:created', function (e) {
-var type = e.layerType,
-layer = e.layer;
-drawnItems.addLayer(layer);
-});
-
-mymap.on("draw:created", function (e) {
-   var type = e.layerType,
-       layer = e.layer;
-
-   if (type === 'marker') {
-       // Do marker specific actions
-       var latlng = e.layer._latlng;
-       $("form input[name='lat']").val(latlng.lat);
-       $("form input[name='lng']").val(latlng.lng);
-   }
-
-   mymap.addLayer(layer);
-   });
 
 var drawControl = new L.Control.Draw({
     edit: {
@@ -41,12 +62,3 @@ mymap.addControl(drawControl);
 
 
 //popup
-var popup = L.popup({
-    maxWidth : 400
-})
-
-    .setLatLng([])
-    .setContent('<img src="https://via.placeholder.com/100"/>')
-    .openOn(mymap);
-
-//L.marker([37.0902, -95.7129], {icon:pinIcon}).addTo(mymap).bindPopup(popup);

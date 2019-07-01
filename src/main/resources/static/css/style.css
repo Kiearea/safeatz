@@ -53,8 +53,26 @@ p {
     font-family: 'Roboto Slab', serif;
 }
 
-footer p {
+
+.allergens {
+    display: flex;
+    background-color: #00cc66;
+    color: white;
+    justify-content: center;
+    align-items: center;
     font-family: 'Roboto Slab', serif;
-    font-size: 10px;
-    text-align: center;
+}
+
+.allergens p {
+    margin-right: 10px;
+    margin-bottom: 0px;
+    align-items: center;
+}
+
+.allergens input {
+    margin: 10px;
+}
+
+.search {
+    background-color: #A9A9A9;
 }
