@@ -53,6 +53,33 @@ p {
     font-family: 'Roboto Slab', serif;
 }
 
+/*Modal*/
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body input{
+    padding: 5px;
+    margin: 10px;
+}
+
+.modal-body textarea {
+    padding: 5px;
+    margin: 10px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+}
+
+.modal-title {
+    font-family: 'Berkshire Swash';
+    color: #00cc66;
+    font-size: 40px;
+}
+
 
 .allergens {
     display: flex;
