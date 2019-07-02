@@ -80,6 +80,11 @@ p {
     font-size: 40px;
 }
 
+.form-bottom {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
 
 .allergens {
     display: flex;
@@ -88,17 +93,20 @@ p {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Slab', serif;
+    padding: 10px;
+}
+
+.allergens label {
+    margin: 10px;
 }
 
 .allergens p {
-    margin-right: 10px;
-    margin-bottom: 0px;
-    align-items: center;
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
 }
 
-.allergens input {
-    margin: 10px;
-}
+
 
 .search {
     background-color: #A9A9A9;

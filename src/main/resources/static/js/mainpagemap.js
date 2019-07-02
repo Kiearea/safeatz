@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         accessToken: 'pk.eyJ1IjoiZW1tYXIxMTYiLCJhIjoiY2p4NmJta3BrMDF5djRhczJkeHJpa2ZrbSJ9.cXAK6dADsONnen5z6lHKCw'
     }).addTo(mymap);
 
-
-
     var drawnItems = new L.FeatureGroup();
     mymap.addLayer(drawnItems);
 
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             featureGroup: drawnItems
         }
     });
-
 
     var drawControl = new L.Control.Draw({
         edit: {
@@ -59,6 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
            $("form input[name='lat']").val(latlng.lat);
            $("form input[name='lng']").val(latlng.lng);
            $("#myModal").modal()
+
+       var popup = L.popup();
+           function onMapClick(e) {
+               popup
+                   .setLatLng(e.latlng)
+                   .setContent("You clicked the map at " + e.latlng.toString())
+                   .openOn(mymap);
+           }
+
+           mymap.on('click', onMapClick);
 
        }
 

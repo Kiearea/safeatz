@@ -2,6 +2,8 @@ package com.example.safEatz.models;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity// This tells Hibernate to make a table out of this class
 public class Pin {
@@ -10,7 +12,15 @@ public class Pin {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    private String name;
+    @NotNull
+    @Size(min=1)
+    private String restaurantName;
+
+    @NotNull
+    @Size(min=1)
+    private String description;
+
+//    private Allergen allergen;
 
     //@ManyToOne //connects the pins to the user
     //private User user;
@@ -23,9 +33,11 @@ public class Pin {
     public Pin() { }
 
 
-    public Pin(Integer id, String name, Double lat, Double lng) {
+    public Pin(Integer id, String restaurantName, String description, Allergen allergen, Double lat, Double lng) {
         this.id = id;
-        this.name = name;
+        this.restaurantName = restaurantName;
+        this.description = description;
+//        this.allergen = allergen;
         this.lat = lat;
         this.lng = lng;
     }
@@ -38,12 +50,20 @@ public class Pin {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRestaurantName() {
+        return restaurantName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Double getLat() {

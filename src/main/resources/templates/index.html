@@ -28,12 +28,6 @@
         <p>Safe foods, no pain</p>
     </div>
 
-    <form action="/" method="post" th:object="${pin}">
-        <input type="hidden" name="lat" th:field="*{lat}" />
-        <input type="hidden" name="lng" th:field="*{lng}" />
-        <input type="submit" value="Save Pin" />
-    </form>
-
 <!--    Modal-->
     <div class="container">
 
@@ -43,35 +37,88 @@
 
                 <!-- Modal content-->
                 <div class="modal-content">
+
                     <div class="modal-header">
                         <h4 class="modal-title">safEatz</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
-                    <div class="modal-body">
-                        <input type="text" placeholder="Restaurant Name" />
-                        <textarea placeholder="Description"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Add Pin</button>
-                    </div>
-                </div>
 
+                    <form action="/" method="post" th:object="${pin}">
+                        <div class="modal-body">
+                            <input type="text" placeholder="Restaurant Name" th:field="*{restaurantName}" />
+                            <textarea placeholder="Description" th:field="*{description}"></textarea>
+                        </div>
+
+                        <div>Allergens this restaurant caters to:</div>
+
+                        <label for="Milk">Milk</label>
+                        <input type="checkbox" id="Milk" />
+
+                        <label for="Eggs">Eggs</label>
+                        <input type="checkbox" id="Eggs" />
+
+                        <label for="Fish">Fish</label>
+                        <input type="checkbox" id="Fish" />
+
+                        <label for="Shellfish">Shellfish</label>
+                        <input type="checkbox" id="Shellfish" />
+
+                        <label for="Tree Nuts">Tree Nuts</label>
+                        <input type="checkbox" id="Tree Nuts" />
+
+                        <label for="Peanuts">Peanuts</label>
+                        <input type="checkbox" id="Peanuts" />
+
+                        <label for="Wheat">Wheat</label>
+                        <input type="checkbox" id="Wheat" />
+
+                        <label for="Soy">Soy</label>
+                        <input type="checkbox" id="Soy" />
+
+                        <input type="hidden" name="lat" th:field="*{lat}" />
+                        <input type="hidden" name="lng" th:field="*{lng}" />
+
+                        <div>
+                            <button type="button" data-dismiss="modal" class="form-bottom">Cancel</button>
+                            <button type="submit" value="Save Pin" class="form-bottom">Add Pin</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
 
     </div>
 
-    <form class="allergens">
+    <form class="allergens" action="/" method="post" th:object="${pin}">
+
         <p>Allergens to Avoid:</p>
-        <input type="checkbox" name="Milk">Milk</input>
-        <input type="checkbox" name="Eggs">Eggs</input>
-        <input type="checkbox" name="Fish">Fish</input>
-        <input type="checkbox" name="Shellfish">Shellfish</input>
-        <input type="checkbox" name="Tree Nuts">Tree Nuts</input>
-        <input type="checkbox" name="Peanuts">Peanuts</input>
-        <input type="checkbox" name="Wheat">Wheat</input>
-        <input type="checkbox" name="Soy">Soy</input>
+
+        <label for="Milk1">Milk</label>
+        <input type="checkbox" id="Milk1" />
+
+        <label for="Eggs1">Eggs</label>
+        <input type="checkbox" id="Eggs1" />
+
+        <label for="Fish1">Fish</label>
+        <input type="checkbox" id="Fish1" />
+
+        <label for="Shellfish1">Shellfish</label>
+        <input type="checkbox" id="Shellfish1" />
+
+        <label for="Tree Nuts1">Tree Nuts</label>
+        <input type="checkbox" id="Tree Nuts1" />
+
+        <label for="Peanuts1">Peanuts</label>
+        <input type="checkbox" id="Peanuts1" />
+
+        <label for="Wheat1">Wheat</label>
+        <input type="checkbox" id="Wheat1" />
+
+        <label for="Soy1">Soy</label>
+        <input type="checkbox" id="Soy1" />
+
+        <label for="Search">Search</label>
+        <input type="submit" id="search" value="Search" />
     </form>
 
     <div id="mapid"></div>
