@@ -6,15 +6,11 @@
           integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
           crossorigin=""/>
 
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/css/style.css}" rel="stylesheet" />
-    <link th:href="@{/css/reset.css}" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"/>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="application/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="application/javascript"></script>
-    <script src="https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <title>safEatz</title>
 
@@ -36,6 +32,47 @@
         <input type="hidden" name="lat" th:field="*{lat}" />
         <input type="hidden" name="lng" th:field="*{lng}" />
         <input type="submit" value="Save Pin" />
+    </form>
+
+<!--    Modal-->
+    <div class="container">
+        <h2>Modal Example</h2>
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+        <!-- Modal -->
+        <div class="modal fade" tabindex="-1" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <form class="allergens">
+        <p>Allergens to Avoid:</p>
+        <input type="checkbox" name="Milk">Milk</input>
+        <input type="checkbox" name="Eggs">Eggs</input>
+        <input type="checkbox" name="Fish">Fish</input>
+        <input type="checkbox" name="Shellfish">Shellfish</input>
+        <input type="checkbox" name="Tree Nuts">Tree Nuts</input>
+        <input type="checkbox" name="Peanuts">Peanuts</input>
+        <input type="checkbox" name="Wheat">Wheat</input>
+        <input type="checkbox" name="Soy">Soy</input>
     </form>
 
     <div id="mapid"></div>
