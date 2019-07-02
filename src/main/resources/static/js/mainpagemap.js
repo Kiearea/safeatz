@@ -59,6 +59,3 @@ mymap.addControl(drawControl);
                layer = e.layer;
            drawnItems.addLayer(layer);
        });
-
-
-//popup

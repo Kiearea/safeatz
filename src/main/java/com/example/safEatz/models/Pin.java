@@ -10,7 +10,7 @@ public class Pin {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    //private String name;
+    private String name;
 
     //@ManyToOne //connects the pins to the user
     //private User user;
@@ -22,15 +22,13 @@ public class Pin {
 
     public Pin() { }
 
-    /*
-    public Pin(Integer id, String name, User user, Double lat, Double lng) {
+
+    public Pin(Integer id, String name, Double lat, Double lng) {
         this.id = id;
         this.name = name;
-        this.user = user;
         this.lat = lat;
         this.lng = lng;
     }
-     */
 
     public Integer getId() {
         return id;
@@ -38,6 +36,14 @@ public class Pin {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getLat() {
