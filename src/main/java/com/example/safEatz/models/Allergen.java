@@ -7,7 +7,7 @@ import javax.persistence.Transient;
 public class Allergen {
 
     @Transient
-    public Allergen[] bigEight = new Allergen[] {
+    public static Allergen[] bigEight = new Allergen[] {
             new Allergen("Milk"),
             new Allergen("Eggs"),
             new Allergen("Fish"),

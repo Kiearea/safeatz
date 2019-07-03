@@ -20,8 +20,6 @@ public class Pin {
     @Size(min=1)
     private String description;
 
-//    private Allergen allergen;
-
     //@ManyToOne //connects the pins to the user
     //private User user;
 
@@ -33,11 +31,10 @@ public class Pin {
     public Pin() { }
 
 
-    public Pin(Integer id, String restaurantName, String description, Allergen allergen, Double lat, Double lng) {
+    public Pin(Integer id, String restaurantName, String description, Double lat, Double lng) {
         this.id = id;
         this.restaurantName = restaurantName;
         this.description = description;
-//        this.allergen = allergen;
         this.lat = lat;
         this.lng = lng;
     }

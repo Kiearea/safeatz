@@ -52,28 +52,28 @@
                         <div>Allergens this restaurant caters to:</div>
 
                         <label for="Milk">Milk</label>
-                        <input type="checkbox" id="Milk" />
+                        <input type="checkbox" id="Milk" name="milk"/>
 
                         <label for="Eggs">Eggs</label>
-                        <input type="checkbox" id="Eggs" />
+                        <input type="checkbox" id="Eggs" name="eggs" />
 
                         <label for="Fish">Fish</label>
-                        <input type="checkbox" id="Fish" />
+                        <input type="checkbox" id="Fish" name="fish" />
 
                         <label for="Shellfish">Shellfish</label>
-                        <input type="checkbox" id="Shellfish" />
+                        <input type="checkbox" id="Shellfish" name="shellfish"/>
 
-                        <label for="Tree Nuts">Tree Nuts</label>
-                        <input type="checkbox" id="Tree Nuts" />
+                        <label for="Tree-Nuts">Tree Nuts</label>
+                        <input type="checkbox" id="Tree-Nuts" name="tree-nuts"/>
 
                         <label for="Peanuts">Peanuts</label>
-                        <input type="checkbox" id="Peanuts" />
+                        <input type="checkbox" id="Peanuts" name="peanuts" />
 
                         <label for="Wheat">Wheat</label>
-                        <input type="checkbox" id="Wheat" />
+                        <input type="checkbox" id="Wheat" name="wheat"/>
 
                         <label for="Soy">Soy</label>
-                        <input type="checkbox" id="Soy" />
+                        <input type="checkbox" id="Soy" name="soy" />
 
                         <input type="hidden" name="lat" th:field="*{lat}" />
                         <input type="hidden" name="lng" th:field="*{lng}" />
@@ -89,7 +89,7 @@
 
     </div>
 
-    <form class="allergens" action="/" method="post" th:object="${pin}">
+    <form class="allergens" action="/" method="post" th:object="${pinform}">
 
         <p>Allergens to Avoid:</p>
 

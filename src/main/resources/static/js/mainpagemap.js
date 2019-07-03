@@ -36,13 +36,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     */
 
-
     // Fetch pins and plot them
     fetch("/api")
     .then(r => r.json())
     .then(r => {
-        r.forEach(pin => L.marker([pin.lat, pin.lng]).addTo(mymap));
+        r.forEach(pin => {
+            L.marker([pin.lat, pin.lng])
+                .addTo(mymap)
+                .bindPopup(pin.restaurantName);
+        });
     });
+
 
     // Handle New pins being dropped.
     mymap.on("draw:created", function (e) {
@@ -55,15 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
            $("form input[name='lat']").val(latlng.lat);
            $("form input[name='lng']").val(latlng.lng);
+           mymap.bindPopup('LatLng: ' + mymap.getLatLng()).openPopup();
            $("#myModal").modal()
-
-       var popup = L.popup();
-           function onMapClick(e) {
-               popup
-                   .setLatLng(e.latlng)
-                   .setContent("You clicked the map at " + e.latlng.toString())
-                   .openOn(mymap);
-           }
 
            mymap.on('click', onMapClick);
 
