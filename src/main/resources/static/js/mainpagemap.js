@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
            $("form input[name='lat']").val(latlng.lat);
            $("form input[name='lng']").val(latlng.lng);
-           mymap.bindPopup('LatLng: ' + mymap.getLatLng()).openPopup();
+//           mymap.bindPopup('LatLng: ' + mymap.getLatLng()).openPopup();
            $("#myModal").modal()
 
            mymap.on('click', onMapClick);
@@ -69,4 +69,3 @@ document.addEventListener('DOMContentLoaded', function() {
        mymap.addLayer(layer);
     });
 });
-
